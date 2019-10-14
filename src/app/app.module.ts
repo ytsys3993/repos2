@@ -15,6 +15,10 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { ConstData} from '../shares/models'
 
+import { IonicStorageModule } from '@ionic/storage';
+
+import { ConstData} from '../shares/models'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,8 +26,12 @@ import { ConstData} from '../shares/models'
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+<<<<<<< HEAD
     IonicStorageModule.forRoot(), 
     FormsModule,   
+=======
+    IonicStorageModule.forRoot()
+>>>>>>> c1b3512803fb29104ca2dd4b07c5b282d63f9260
   ],
   providers: [
     StatusBar,
