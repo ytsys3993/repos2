@@ -1,21 +1,47 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      現場入力
+      Tab Two
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="stacked">会場名</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+<ion-content fullscreen>
+  <form onsubmit="processForm(event)">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      
+      <ion-item>
+        <ion-label position="stacked">name</ion-label>
+        <ion-input name="name" [(ngModel)]="dataEvent.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">place_name</ion-label>
+        <ion-input name="place_name" [(ngModel)]="dataEvent.place_name"></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">都道府県</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-range min="1" max="5" step="1" snaps="true" class="rate-starts" margin-right [(ngModel)]="rate">
-  </ion-range>
+      <ion-item>
+        <ion-label position="stacked">comment</ion-label>
+        <ion-textarea name="comment" [(ngModel)]="dataEvent.comment"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Member</ion-label>
+        <ion-select name="member" [(ngModel)]="dataEvent.member_id" multiple="true">
+          <ion-select-option *ngFor="let members of dataMembers" [value]="members.id">{{ members.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">favorite</ion-label>
+        <ion-select name ="favorite" [(ngModel)]="dataEvent.favorite">
+          <ion-select-option *ngFor="let favorites of dataFavorites" [value]="favorites.id">{{ favorites.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">submit</ion-button>
+    </div>
+  </form>
 </ion-content>
