@@ -11,7 +11,6 @@ import { ConstData} from '../../shares/models'
 })
 export class Tab1Page {
 
-<<<<<<< HEAD
   constdata: ConstData;
 
   constructor(public storage: Storage,constdata: ConstData,public router: Router) {
@@ -53,20 +52,6 @@ export class Tab1Page {
     }
   }
 
-=======
-  constructor(public storage: Storage,public constdata: ConstData,public router: Router) {
-
-    //初回処理
-    this.storage.get("Firstload")
-    .then((t)=>{
-    })
-    .catch((err)=>{
-      this.storage.set("RegionMaster",constdata.dataRegion)
-      this.storage.set("Firstload",true)
-    });
-    
-  }
->>>>>>> c1b3512803fb29104ca2dd4b07c5b282d63f9260
   onClickSetting(){
     this.router.navigate(["/tabs/tab2"]);
   }
